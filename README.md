@@ -1,8 +1,8 @@
-#Demo - Users App deployed on Kubernetes
+# Demo - Users App deployed on Kubernetes
 
 Simple Users Spring Boot deployment on Minikube
 
-##Start Minikube
+## Start Minikube
 	- Install VirtualBox from https://www.virtualbox.org/wiki/Downloads	
 	- Install Minikube from https://kubernetes.io/docs/tasks/tools/install-minikube/ 
 	- Install kubectl from https://kubernetes.io/docs/tasks/tools/install-kubectl/
@@ -13,7 +13,7 @@ Then, start Minikube:
 # minikube start
 ```
 
-##Create and run a simple Spring Boot app
+## Create and run a simple Spring Boot app
 1 -  To create a simple app go to [Spring initializr](http://start.spring.io) and then add 
 the following dependencies: web, actuator, jpa, rest, hsqldb and lombok.
 
