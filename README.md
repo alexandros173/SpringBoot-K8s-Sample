@@ -38,6 +38,13 @@ src/main/resources/application.properties
 ```bash
 endpoints.env.enabled=true
 ```
+Also we need to add in the same file the in-memory db connection properties
+```bash
+spring.datasource.url=jdbc:hsqldb:file:target/testdb
+spring.datasource.username=sa
+spring.jpa.hibernate.ddl-auto=create
+spring.datasource.initialize=true
+```
 
 3 - Create a Dockerfile so we can package this app as a Docker image
 
@@ -101,4 +108,16 @@ Now if you need to scale up your application (the sales are coming??), we add 4 
 ```bash
 kubectl scale deployment users --replicas=5
 kubectl get pods
+```
+
+Finally if you need to update your deployed image, build a new version of the application, create the new image and update it in Kubernetes:
+```bash
+docker build -t $USER/users:0.0.2 .
+kubectl set image deployment/users users=users:0.0.2
+```
+
+Clean everything
+```bash
+ kubectl delete all -l run=users
+ minikube stop
 ```
