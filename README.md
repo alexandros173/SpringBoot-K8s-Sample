@@ -2,16 +2,11 @@
 
 Simple Users Spring Boot deployment on Minikube
 
-## Start Minikube
+## Prerequisites
 	- Install VirtualBox from https://www.virtualbox.org/wiki/Downloads	
 	- Install Minikube from https://kubernetes.io/docs/tasks/tools/install-minikube/ 
 	- Install kubectl from https://kubernetes.io/docs/tasks/tools/install-kubectl/
 
-Then, start Minikube:
-
-```bash
-# minikube start
-```
 
 ## Create and run a simple Spring Boot app
 1 -  To create a simple app go to [Spring initializr](http://start.spring.io) and then add 
@@ -84,7 +79,7 @@ docker build -t $USER/users:0.0.1 .
 
 One you create the image you can check where your image is with 
 ```bash
-doker images
+docker images
 ```
 
 6 - Now we run a Kubernetes deployment on the running Minikube cluster
